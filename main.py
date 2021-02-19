@@ -5,20 +5,10 @@ from os import system
 from cola import Cola
 from dato import Dato
 from matriz import Matriz
-
-"""
-lista = ListaCiruclar()
-lista.AgregarFinal(10)
-lista.AgregarFinal(110)
-lista.AgregarFinal(130)
-lista.AgregarFinal(20)
-lista.AgregarInicio(12)
-lista.Recorrer()
-"""
+from estructuras import *
 
 datos = []
 nueva_cola = Cola()
-
 
 while True:
     print('\n')
@@ -34,39 +24,43 @@ while True:
     print('\n')
 
     if comando == '1':
+        contador = 0
         circular_matrices = ListaCiruclar()
         #ruta = input('Escribir ruta especifica: ')
-        xml = minidom.parse('entrada1.xml')
+        xml = minidom.parse('entrada2.xml')
         matrices = xml.getElementsByTagName("matriz")
         for matriz in matrices:
-            prueba = []
-            if matriz.hasAttribute("name"):
-                nombre = matriz.getAttribute('name')
-                if matriz.hasAttribute("n"):
-                    filas = int(matriz.getAttribute('n'))
-                    if matriz.hasAttribute("m"):
-                        columnas = int(matriz.getAttribute('m'))
+            contador += 1
+            #print(contador)
+            prueba = linked_list1()
+            #if matriz.hasAttribute("name"):
+            nombre = matriz.getAttribute('nombre')
+            #print(nombre)
+                #if matriz.hasAttribute("n"):
+            filas = int(matriz.getAttribute('n'))
+                    #if matriz.hasAttribute("m"):
+            columnas = int(matriz.getAttribute('m'))
                         #print('Matriz: ' + nombre+' n:'+str(filas)+' m:'+str(columnas))
-                        for l in range(filas*columnas):
-                            dato1 = matriz.getElementsByTagName("dato")[l]
-                            #print(valor1.getAttribute('x'))
-                            aw = Dato(dato1.getAttribute('x'), dato1.getAttribute('y'), dato1.firstChild.data)
-                            nueva_cola.encolar(aw)
-                        #nueva_cola.imprimir()
-                        for i in range(1, filas+1):
-                            a = []
-                            for j in range(1, columnas+1):
-                                valor1 = nueva_cola.desencolar()
-                                #print('\n')
-                                #nueva_cola.imprimir()
-                                a.append(valor1.valor)
-                            prueba.append(a)
-                        nm = Matriz(nombre, filas, columnas, prueba)
-                        #nm.imprimir()
-                        circular_matrices.AgregarInicio(nm)
-
-        circular_matrices.Recorrer()
-
+            for l in range(filas*columnas):
+                dato1 = matriz.getElementsByTagName("dato")[l]
+                #print(valor1.getAttribute('x'))
+                aw = Dato(dato1.getAttribute('x'), dato1.getAttribute('y'), dato1.firstChild.data)
+                nueva_cola.encolar(aw)
+            #nueva_cola.imprimir()
+            for i in range(1, filas+1):
+                a = linked_list()
+                for j in range(1, columnas+1):
+                    valor1 = nueva_cola.desencolar()
+                    #print('\n')
+                    #nueva_cola.imprimir()
+                    a.insertar(valor1.valor)
+                prueba.insertar(a)
+            nm = Matriz(nombre, filas, columnas, prueba)
+            #nm.imprimir()
+            #print(nm)
+            #print(prueba.string())
+            circular_matrices.AgregarFinal(nm)
+        #circular_matrices.Recorrer()
 
     if comando == '2':
         pass
@@ -82,13 +76,9 @@ while True:
         print('>>4to Semetre')
 
     if comando == '5':
-        auxiliar_matrices = circular_matrices.Listar()
         graf = input('Nombre de la matriz: ')
-        for ma in auxiliar_matrices:
-            if ma.nombre == graf:
-                ma.grafico()
-            else:
-                continue
+        ma_graf = circular_matrices.Listar(graf)
+        ma_graf.grafico()
 
     if comando == '6':
         system(quit())
