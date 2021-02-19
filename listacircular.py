@@ -34,3 +34,12 @@ class ListaCiruclar():
       print(aux.dato)
       aux = aux.next
     print(aux.dato)
+
+  def Listar(self):
+    listado = []
+    aux = self.first
+    while aux.next != self.first:
+      listado.append(aux.dato)
+      aux = aux.next
+    listado.append(aux.dato)
+    return listado
