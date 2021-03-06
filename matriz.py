@@ -1,10 +1,7 @@
-from listacircular import ListaCiruclar
-import webbrowser
-from estructuras import linked_list1
-from estructuras import linked_list
 from estructuras import *
 import os
 import time
+
 
 class Matriz():
 
@@ -31,13 +28,13 @@ class Matriz():
         tuplada.borrar()
         cont_b = -1
 
-        #time.sleep(2)
+        time.sleep(2)
         print('Procesando Matriz')
         for sa in range(self.linked_list1.devolver_tamano()):
             bina_aux = linked_list()
             cont_b += 1
             aux = self.linked_list1.buscar_indice(sa)
-            #time.sleep(1)
+            time.sleep(1)
             print('Procesando Lista de la Matriz')
             for se in range(aux.devolver_tamano1()):
                 try:
@@ -50,9 +47,9 @@ class Matriz():
                     bina_aux.insertar(0)
                 #bina_aux.imprimir()
             bina.insertar(bina_aux)
-            #time.sleep(1)
+            time.sleep(1)
             print('Calculando lista binaria')
-        #time.sleep(2)
+        time.sleep(2)
         print('Matriz Binaria Lista'+'\n')
 
         tamano = bina.devolver_tamano()
@@ -60,6 +57,8 @@ class Matriz():
         #print('\n')
         respuesta = linked_list()
         respuestas = ''
+        time.sleep(2)
+        print('Realizando comparacion binaria')
         for mon in range(bina.devolver_tamano()):
             #respuesta = linked_list()
             contadores = -1
@@ -120,12 +119,15 @@ class Matriz():
             if f != 0:
                 frecuencias.insertar(f)
                 #frecuencias.imprimir()
-
+        time.sleep(2)
+        print('Similitudes encontradas')
         #print(respuesta.string())
         #print(frecuencias.string())
         reducida_aux = linked_list1()
         redux_2 = linked_list()
         #redux_1 = linked_list()
+        time.sleep(2)
+        print('Sumando tuplas identicas')
         contador_b = 0
         tams = frecuencias.devolver_tamano1()
         for asmnj in range(tams):
@@ -160,7 +162,8 @@ class Matriz():
                         redux_1.insertar(valor)
             #print(redux_1.string())
             reducida_aux.insertar(redux_1)
-
+        time.sleep(2)
+        print('Procesando sumas')
         #print(reducida_aux.string())
         cad = respuesta.string()
         for aqu in range(self.linked_list1.devolver_tamano()):
@@ -170,21 +173,20 @@ class Matriz():
             else:
                 #print('Perdido')
                 reducida_aux.insertar(self.linked_list1.buscar_indice(numabus))
-                frecuencias.insertar(0)
+                #frecuencias.insertar(0)
         #print(frecuencias.string())
         #print(reducida_aux.string())
         #print(str(self.nombre)+' '
               #+str(reducida_aux.devolver_tamano())+' '
               #+str(str(self.m))+' '
               #+str(reducida_aux))
+        time.sleep(2)
+        print('Matriz reducida lista')
+        print('\n')
         retorno_reducida = Matriz(str(self.nombre), reducida_aux.devolver_tamano(),
                                   self.m, reducida_aux)
         return (retorno_reducida, frecuencias)
 
-
-
-    def suma(self):
-        pass
 
     def grafico(self):
         cont = -1
@@ -193,30 +195,30 @@ class Matriz():
             re.write('splines="False";' + '\n')
 
             re.write('/* Entidades */' + '\n')
-            re.write('Matrizes [label="matrices", shape="oval"]' + '\n')
             re.write('Matriz [label="'+self.nombre+'", shape="oval"]' + '\n')
             re.write('N [label="n='+str(self.n)+'", shape="doublecircle", color="blue"]' + '\n')
             re.write('M [label="m='+str(self.m)+'", shape="doublecircle", color="blue"]' + '\n')
 
             re.write('/* Relaciones */' + '\n')
-            re.write('Matrizes -> Matriz' + '\n')
             re.write('Matriz -> N' + '\n')
             re.write('Matriz -> M' + '\n')
 
             cont1 = -1
-            for sa in range(self.linked_list1.devolver_tamano()):
+            for sa in range(self.n):
                 cont += 1
                 aux = self.linked_list1.buscar_indice(sa)
-                for se in range(aux.devolver_tamano1()):
+                for se in range(self.m):
                     cont1 += 1
                     if cont == 0:
                         re.write(
-                            'AUX' + str(cont1) + ' [label="' + str(aux.buscar_indice(se)) + '", shape="circle"]' + '\n')
+                            'AUX' + str(cont1) + ' [label="' + str(aux.buscar_indice(se)) + '", shape="circle", '
+                                                                                            'color="red"]' + '\n')
                         re.write('Matriz -> ' + 'AUX' + str(cont1) + '\n')
                     elif cont <= self.linked_list1.devolver_tamano():
                         anterior = aux.buscar_indice(cont - 1)
                         re.write(
-                            'AUX' + str(cont1) + ' [label="' + str(aux.buscar_indice(se)) + '", shape="circle"]' + '\n')
+                            'AUX' + str(cont1) + ' [label="' + str(aux.buscar_indice(se)) + '", shape="circle", '
+                                                                                            'color="red"]' + '\n')
                         re.write('AUX' + str(cont1 - self.m) + ' -> ' + 'AUX' + str(cont1) + '\n')
 
             re.write('}')
