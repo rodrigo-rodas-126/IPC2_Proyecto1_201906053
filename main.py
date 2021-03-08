@@ -249,6 +249,3 @@ while True:
 
     if comando == '6':
         system(quit())
-
-    else:
-        print('Comando desconocido')

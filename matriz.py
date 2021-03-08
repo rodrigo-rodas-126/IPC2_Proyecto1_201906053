@@ -1,6 +1,7 @@
 from estructuras import *
 import os
 import time
+import webbrowser
 
 
 class Matriz():
@@ -225,4 +226,4 @@ class Matriz():
 
             re.close()
         os.system('dot -Tpng ' + 'grafos/grafo_'+str(self.nombre)+'.dot' + ' -o grafos/imagen_'+str(self.nombre)+'.png')
-        #webbrowser.open('grafos/imagen_'+str(self.nombre)+'.png')
+        webbrowser.open(os.getcwd()+'\grafos'+'\imagen_'+str(self.nombre)+'.png')

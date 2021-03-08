@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eeb4c6ea-cdad-46ae-be8e-d2dafa0554d3" name="Default Changelist" comment="Listo: Binario, tuplas, suma, generacion xml&#10;Problema: Generacion Grafos">
+    <list default="true" id="eeb4c6ea-cdad-46ae-be8e-d2dafa0554d3" name="Default Changelist" comment="Documentacion">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/matriz.py" beforeDir="false" afterPath="$PROJECT_DIR$/matriz.py" afterDir="false" />
@@ -14,7 +14,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="release2" />
+        <entry key="$PROJECT_DIR$" value="release3" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -125,7 +125,21 @@
       <option name="project" value="LOCAL" />
       <updated>1614483954961</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Errores corregidos">
+      <created>1615063094872</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1615063094872</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Documentacion">
+      <created>1615091799962</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1615091799962</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -145,6 +159,8 @@
     <MESSAGE value="Definicion de nuevos TDA, generacion de grafos en fase de prueba" />
     <MESSAGE value="Definicion de nuevos TDA, generacion de grafos con TDA implementados" />
     <MESSAGE value="Listo: Binario, tuplas, suma, generacion xml&#10;Problema: Generacion Grafos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Listo: Binario, tuplas, suma, generacion xml&#10;Problema: Generacion Grafos" />
+    <MESSAGE value="Errores corregidos" />
+    <MESSAGE value="Documentacion" />
+    <option name="LAST_COMMIT_MESSAGE" value="Documentacion" />
   </component>
 </project>
